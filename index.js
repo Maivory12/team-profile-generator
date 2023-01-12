@@ -95,6 +95,7 @@ const addEmployee =() => {
             defalut: false
         }
     ])
+    
     .then (employeeInput =>{
         let {role, name, ID, email, github, school, anotherEmployee} = employeeInput;
         let employee;
@@ -104,6 +105,13 @@ const addEmployee =() => {
             employee = new Engineer (name, ID, email, github);
             console.log(employee)
         }
+
+        //Assigning input to Intern
+        if (role === "Intern"){
+            employee = new Intern (name, ID, email, school)
+            console.log(employee)
+        }
+        team.push(employee);
     })
    
 }
