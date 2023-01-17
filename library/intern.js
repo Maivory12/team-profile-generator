@@ -10,4 +10,16 @@
         this.school = school;
 
     }
- }
+
+    //retrieves school input
+    getSchool(){
+        return this.school;
+    }
+
+    // overrides to intern role
+    getRole (){
+        return "Intern";
+    }
+    }
+
+module.exports = Intern;
