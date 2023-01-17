@@ -12,7 +12,7 @@
     }
 
     //retrieves school input
-    getSchool(){
+    getSchool (){
         return this.school;
     }
 
