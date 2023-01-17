@@ -10,6 +10,11 @@ class Manager extends Employee{
         this.officeNumber = officeNumber;
     }
 
+    // retrieves user input for office number
+        getOfficeNumber (){
+            return this.officeNumber
+        }
+
     // override employee tag to manager
         getRole(){
             return "Manager";
