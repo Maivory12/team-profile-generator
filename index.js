@@ -112,9 +112,18 @@ const addEmployee =() => {
             console.log(employee)
         }
         team.push(employee);
+
+        // to add more employees
+        if (anotherEmployee){
+            return addEmployee(team);
+        }
+        else {
+            return team;
+        }
     })
    
 }
 
-// Function call to initialize app
-addManager();
+// Function call to initialize app and path to step through command line
+addManager()
+    .then (addEmployee)

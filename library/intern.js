@@ -5,7 +5,7 @@
  class Intern extends Employee {
     constructor (name, ID, email, school){
         // calls employee constructor
-        super (name,ID,Email)
+        super (name, ID, email)
 
         this.school = school;
 
