@@ -61,5 +61,22 @@ const generateTeam = (team) => {
         `;
         html.push(internHtml);
     }
+   
+      // loop for all of the employees
+      for (let i = 0; i < team.length; i++) {
+        if (team[i].getRole() === "Manager") {
+            generateManager(team[i]);
+        }
+        if (team[i].getRole() === "Engineer") {
+            generateEngineer(team[i]);
+        }
+        if (team[i].getRole() === "Intern") {
+            generateIntern(team[i]);
+        }
+    }
 
+    // join the HTML blocks
+    return html.join('');
 }
+
+
