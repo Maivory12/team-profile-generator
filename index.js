@@ -98,20 +98,20 @@ const addEmployee =() => {
     
     .then (employeeInput =>{
         let {role, name, ID, email, github, school, anotherEmployee} = employeeInput;
-        let employee;
+        let Employee;
 
         // Assigning input to engineer
         if (role === "Engineer"){
-            employee = new Engineer (name, ID, email, github);
-            console.log(employee)
+            Employee = new Engineer (name, ID, email, github);
+            console.log(Employee)
         }
 
         //Assigning input to Intern
         if (role === "Intern"){
-            employee = new Intern (name, ID, email, school)
-            console.log(employee)
+            Employee = new Intern (name, ID, email, school)
+            console.log(Employee)
         }
-        team.push(employee);
+        team.push(Employee);
 
         // to add more employees
         if (anotherEmployee){
@@ -124,6 +124,27 @@ const addEmployee =() => {
    
 }
 
+// function to generate the HTML
+const writeFile = data =>{
+    fs.writeFile("./dist/newHtml.html", data, err=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log("Your team profile has been generated successfully! Please check the newHtml.html")
+        }
+    })
+};
+
 // Function call to initialize app and path to step through command line
 addManager()
     .then (addEmployee)
+    .then (team =>{
+        return generatedHtml(team)
+    })
+    .then (pageHTML=>{
+        return writeFile(pageHTML);
+    })
+    .catch (err=>{
+        console.log(err);
+    })
