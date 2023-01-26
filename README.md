@@ -47,4 +47,4 @@
   ## LiveApp
     Video that shows how to use the Team Profile Generator.
 
-    [Screencastify Recording]()
+    [Screencastify Recording](https://drive.google.com/file/d/1uZWrevZHi9_uQVV59aNYh7GYo2FzR0Yh/view)
